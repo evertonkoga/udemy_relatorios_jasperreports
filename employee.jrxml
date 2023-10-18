@@ -75,6 +75,12 @@ FROM funcionarios f, empresas e]]>
 	<variable name="SALARIO_MEDIA_PAGE" class="java.math.BigDecimal" resetType="Column" calculation="Average">
 		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
 	</variable>
+	<variable name="SALARIO_TOTAL_GERAL" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
+	</variable>
+	<variable name="SALARIO_MEDIA_GERAL" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -262,6 +268,35 @@ FROM funcionarios f, empresas e]]>
 		<band height="54" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="50" height="30" uuid="5bf384e9-5a09-4b77-99d6-db46e5df7314"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="0" width="58" height="30" uuid="f7041017-b784-44dc-9f7f-19fc5fa93c14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Média:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00;¤ -#,##0.00">
+				<reportElement x="230" y="0" width="152" height="30" uuid="b96d7545-c9e7-4147-8c51-b0995c778154"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SALARIO_TOTAL_GERAL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00;¤ -#,##0.00">
+				<reportElement x="440" y="0" width="132" height="30" uuid="db0ea689-ef5a-47ee-8bcf-c5c7e64ce3f8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SALARIO_MEDIA_GERAL}]]></textFieldExpression>
+			</textField>
+		</band>
 	</summary>
 </jasperReport>
