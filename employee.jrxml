@@ -3,6 +3,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employee" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2dfa2291-52e3-4f64-aa50-a1e7e515964a">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
+	<style name="zebra_line">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#CCFFFF"/>
+		</conditionalStyle>
+	</style>
 	<queryString language="SQL">
 		<![CDATA[SELECT id_funcionario, nome,data_nascimento, salario FROM funcionarios]]>
 	</queryString>
@@ -83,7 +89,7 @@
 	<detail>
 		<band height="30" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="70" height="30" uuid="87815135-ab6d-4ec7-8062-3448bb216fec">
+				<reportElement style="zebra_line" x="0" y="0" width="70" height="30" uuid="87815135-ab6d-4ec7-8062-3448bb216fec">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f1ba181-24e5-4d07-b4e2-2c8c8618dc0b"/>
 				</reportElement>
 				<box padding="5">
@@ -99,7 +105,7 @@
 				<textFieldExpression><![CDATA[$F{id_funcionario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="70" y="0" width="267" height="30" uuid="8e497d17-27c8-4212-a0c7-10e0e286babe">
+				<reportElement style="zebra_line" x="70" y="0" width="267" height="30" uuid="8e497d17-27c8-4212-a0c7-10e0e286babe">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1cd6da8c-7925-454d-89d2-8b79b38d772b"/>
 				</reportElement>
 				<box>
@@ -115,7 +121,7 @@
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="337" y="0" width="143" height="30" uuid="7bb77640-f5db-4432-ae96-75341a1109b5">
+				<reportElement style="zebra_line" x="337" y="0" width="143" height="30" uuid="7bb77640-f5db-4432-ae96-75341a1109b5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4b67cf4-5b9a-4a2b-b0f0-73098564bf74"/>
 				</reportElement>
 				<box>
@@ -131,7 +137,7 @@
 				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="480" y="0" width="92" height="30" uuid="00d42609-6155-4cd4-9c61-102a566f3b0f">
+				<reportElement style="zebra_line" x="480" y="0" width="92" height="30" uuid="00d42609-6155-4cd4-9c61-102a566f3b0f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b17e412e-06f1-4da4-aeee-8dea46609627"/>
 				</reportElement>
 				<box>
