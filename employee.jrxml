@@ -202,7 +202,7 @@ FROM funcionarios f, empresas e]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="¤ #,##0.##;¤ -#,##0.##">
 				<reportElement style="zebra_line" x="480" y="0" width="92" height="30" uuid="00d42609-6155-4cd4-9c61-102a566f3b0f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b17e412e-06f1-4da4-aeee-8dea46609627"/>
 				</reportElement>
