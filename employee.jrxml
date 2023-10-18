@@ -81,6 +81,12 @@ FROM funcionarios f, empresas e]]>
 	<variable name="SALARIO_MEDIA_GERAL" class="java.math.BigDecimal" calculation="Average">
 		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
 	</variable>
+	<variable name="MAIOR_SALARIO" class="java.math.BigDecimal" resetType="Page" calculation="Highest">
+		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
+	</variable>
+	<variable name="MENOR_SALARIO" class="java.math.BigDecimal" resetType="Page" calculation="Lowest">
+		<variableExpression><![CDATA[$F{salario}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -233,7 +239,7 @@ FROM funcionarios f, empresas e]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="30" splitType="Stretch">
+		<band height="35" splitType="Stretch">
 			<staticText>
 				<reportElement x="180" y="0" width="50" height="30" uuid="ccdb9934-b622-42a4-8711-e41c9da3ce6a"/>
 				<box padding="5"/>
@@ -302,8 +308,48 @@ FROM funcionarios f, empresas e]]>
 			</textField>
 		</band>
 	</pageFooter>
+	<lastPageFooter>
+		<band height="30">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="30" backcolor="#FFFFCC" uuid="bde647e7-a99c-4272-8273-19f8f1a7ff84"/>
+				<graphicElement>
+					<pen lineColor="#E3E3E3"/>
+				</graphicElement>
+			</rectangle>
+			<textField pattern="¤ #,##0.00;¤ -#,##0.00">
+				<reportElement x="280" y="0" width="99" height="30" uuid="b349859a-947e-4078-93df-3d7c5b9bf0f9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{MAIOR_SALARIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="0" width="100" height="30" uuid="32c0fd0b-5c35-4bcd-bbb8-e954d5beff1f"/>
+				<box padding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Maior Salário:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="101" height="30" uuid="cd1baa10-e80f-4d28-aa98-71c908f48dc5"/>
+				<box padding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Menor Salário:]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00;¤ -#,##0.00">
+				<reportElement x="480" y="0" width="92" height="30" uuid="c3ff1825-a120-4341-93f7-14345cb39d5f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{MENOR_SALARIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
 	<summary>
-		<band height="30" splitType="Stretch">
+		<band height="35" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="0" width="572" height="30" backcolor="#E3E3E3" uuid="1b995183-f77a-4b5b-9256-a703c3a29b70"/>
 				<graphicElement>
