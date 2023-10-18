@@ -4,8 +4,32 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
 	<queryString language="SQL">
-		<![CDATA[]]>
+		<![CDATA[SELECT id_funcionario, nome,data_nascimento, salario FROM funcionarios]]>
 	</queryString>
+	<field name="id_funcionario" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id_funcionario"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_funcionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="funcionarios"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="funcionarios"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_nascimento" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="data_nascimento"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_nascimento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="funcionarios"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salario" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="salario"/>
+		<property name="com.jaspersoft.studio.field.label" value="salario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="funcionarios"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -16,10 +40,97 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="70" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="f9b2d333-cf59-4b61-9834-932e833387ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f1ba181-24e5-4d07-b4e2-2c8c8618dc0b"/>
+				</reportElement>
+				<box padding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="70" y="0" width="267" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="fc61db68-dc84-4350-853e-008e737deff1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1cd6da8c-7925-454d-89d2-8b79b38d772b"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="337" y="0" width="143" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="4368b619-65e6-4358-a8aa-c34ba509968c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4b67cf4-5b9a-4a2b-b0f0-73098564bf74"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="480" y="0" width="92" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="e402559a-f056-4b22-a9ea-131dd711d254">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b17e412e-06f1-4da4-aeee-8dea46609627"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salário]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="70" height="30" uuid="87815135-ab6d-4ec7-8062-3448bb216fec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f1ba181-24e5-4d07-b4e2-2c8c8618dc0b"/>
+				</reportElement>
+				<box padding="5">
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="0" width="267" height="30" uuid="8e497d17-27c8-4212-a0c7-10e0e286babe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1cd6da8c-7925-454d-89d2-8b79b38d772b"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="0" width="143" height="30" uuid="7bb77640-f5db-4432-ae96-75341a1109b5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4b67cf4-5b9a-4a2b-b0f0-73098564bf74"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="92" height="30" uuid="00d42609-6155-4cd4-9c61-102a566f3b0f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b17e412e-06f1-4da4-aeee-8dea46609627"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{salario}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
