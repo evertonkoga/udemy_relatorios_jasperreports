@@ -236,14 +236,16 @@ FROM funcionarios f, empresas e]]>
 		<band height="30" splitType="Stretch">
 			<staticText>
 				<reportElement x="180" y="0" width="50" height="30" uuid="ccdb9934-b622-42a4-8711-e41c9da3ce6a"/>
-				<textElement verticalAlignment="Middle">
+				<box padding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="382" y="0" width="58" height="30" uuid="3393dbe7-d1ab-404c-a8fc-8114f0c3111e"/>
-				<textElement verticalAlignment="Middle">
+				<box padding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Média:]]></text>
@@ -302,16 +304,24 @@ FROM funcionarios f, empresas e]]>
 	</pageFooter>
 	<summary>
 		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="30" backcolor="#E3E3E3" uuid="1b995183-f77a-4b5b-9256-a703c3a29b70"/>
+				<graphicElement>
+					<pen lineColor="#E3E3E3"/>
+				</graphicElement>
+			</rectangle>
 			<staticText>
 				<reportElement x="180" y="0" width="50" height="30" uuid="5bf384e9-5a09-4b77-99d6-db46e5df7314"/>
-				<textElement verticalAlignment="Middle">
+				<box padding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="382" y="0" width="58" height="30" uuid="f7041017-b784-44dc-9f7f-19fc5fa93c14"/>
-				<textElement verticalAlignment="Middle">
+				<box padding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Média:]]></text>
