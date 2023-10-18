@@ -265,7 +265,22 @@ FROM funcionarios f, empresas e]]>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="30" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="110" y="0" width="100" height="30" uuid="6e7a0d53-d3a5-430d-a54e-21b77dd64cdf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="30" uuid="2392eadb-0b54-4c7c-8c57-77ca270e7164"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório criado em:]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="30" splitType="Stretch">
