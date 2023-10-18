@@ -186,7 +186,7 @@ FROM funcionarios f, empresas e]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="dd/MM/yyyy">
 				<reportElement style="zebra_line" x="337" y="0" width="143" height="30" uuid="7bb77640-f5db-4432-ae96-75341a1109b5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4b67cf4-5b9a-4a2b-b0f0-73098564bf74"/>
 				</reportElement>
